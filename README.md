@@ -1,5 +1,7 @@
 # face-calibration
 
+![Splash Image](images/splash.png)
+
 **Improving Facial Rig Semantics for Tracking and Retargeting**
 
 D. Omens, A. Thurman, J. Yu, R. Fedkiw — Stanford University / Epic Games
@@ -12,17 +14,19 @@ D. Omens, A. Thurman, J. Yu, R. Fedkiw — Stanford University / Epic Games
 
 This package provides tools for **calibrating facial animation rigs** so that automated trackers produce semantically meaningful animation controls suitable for retargeting.
 
-The core idea: a tracker that inverts a rig to find controls from geometry is typically not differentiable. We use **implicit differentiation** to compute gradients through the tracker anyway, enabling gradient-based optimization of the rig's internal parameters.
+The core ideas: Accurate rig calibration requires a multi-stage pipeline. Firstly, Simon-Says data must be captured and rig calibration must be carefully applied to respect control combinations. Secondly, a tracker that inverts a rig to find controls from geometry is typically not differentiable. We use **implicit differentiation** to compute gradients through the tracker anyway, enabling gradient-based fine-tuning of the rig's internal parameters.
 
-Given a rig `R(c; θ)` and a tracker `T(I; θ)`, we compute `dT/dθ` by solving:
+Given a rig `R(c; θ)` and a tracker `T(I; θ)`, we compute `dT/dθ` by solving
 
 ```
 dR/dc · dT/dθ = −dR/dθ
 ```
 
-in a least-squares sense. This is packaged as PyTorch autograd Functions, so you can use it in any standard optimization loop.
+efficiently while accounting for tracker errors. This is packaged as PyTorch autograd Functions, so you can use it in any standard optimization loop.
 
 **This package works with any animation rig implemented as a differentiable Pytorch function.** We include an augmented version of the [FLAME](https://flame.is.tue.mpg.de) parametric head model with semantically meaningful input animation controls as a working example.
+
+![High-level overview](images/high_level_overview.png)
 
 ## Installation
 
