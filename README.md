@@ -4,7 +4,7 @@
 
 D. Omens, A. Thurman, J. Yu, R. Fedkiw — Stanford University / Epic Games
 
-[\[Paper (TBR)\]](https://doi.org/10.1111/cgf.15275) [\[Project Page\]](https://face-calibration.github.io)
+[\[Paper (TBR)\]](https://face-calibration.github.io) [\[Project Page\]](https://face-calibration.github.io)
 
 ---
 
