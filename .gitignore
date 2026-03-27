@@ -1,0 +1,44 @@
+# face-calibration
+
+# FLAME model data (must be downloaded by user)
+data/FLAME2020/*.pkl
+data/FLAME2020/*.npz
+
+# Output files
+output/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+
+# IDE
+.vs/
+.vscode/
+.idea/
+*.sublime-workspace
+
+# PyTorch artifacts
+*.tar
+*.tfevents.*
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS
+.DS_Store
+Thumbs.db

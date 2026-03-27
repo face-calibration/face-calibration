@@ -1,0 +1,42 @@
+[project]
+name = "face-calibration"
+version = "0.1.0"
+description = "Rig calibration via implicit differentiation for facial animation retargeting"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "D. Omens"},
+    {name = "A. Thurman"},
+    {name = "J. Yu"},
+    {name = "R. Fedkiw"},
+]
+keywords = ["facial-animation", "rig-calibration", "implicit-differentiation", "retargeting", "FLAME"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "torch>=2.0",
+    "numpy",
+    "scipy",
+    "pyyaml",
+    "tqdm",
+]
+
+[project.optional-dependencies]
+viewer = ["PyOpenGL", "PySide6"]
+dev = ["pytest"]
+
+[project.urls]
+Paper = "https://doi.org/10.1111/cgf.15275"
+Repository = "https://github.com/YOUR_ORG/face-calibration"
+
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[tool.setuptools.packages.find]
+include = ["face_calibration*"]

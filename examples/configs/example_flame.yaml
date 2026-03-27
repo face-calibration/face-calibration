@@ -1,0 +1,34 @@
+# Example configuration for Semantic FLAME rig calibration.
+#
+# Before running, update root_folder to point to the data/ directory
+# and make sure you have downloaded the FLAME model to data/FLAME2020/.
+
+# Path to the data/ directory (absolute or relative to where you run the script)
+root_folder: "data"
+
+# FLAME model configuration
+flame_geom_path: "FLAME2020/generic_model.pkl"
+flame_template_path: "uv_template.obj"
+tex_space_path: "FLAME2020/FLAME_texture.npz"
+flame_lmk_path: "landmark_embedding.npy"
+num_shape_params: 300
+num_exp_params: 103
+
+# Semantic rig configuration
+num_controls: 122
+control_names: "controls_simple.txt"
+mh_to_flame_basis: "mh_to_flame_deltas_basis.npy"
+
+# Identity (replace with your own identity parameters)
+identity: "identities/identity1/identity1_identity.npy"
+global_expression: "identities/identity1/global_expression.npy"
+
+# Full rig settings (for calibration scripts)
+full_rig:
+  output: "output/calibration"
+  lbs: "lbs"
+  masks: "masks"
+  obj: "uv_template.obj"
+
+model:
+  type: "flame"
